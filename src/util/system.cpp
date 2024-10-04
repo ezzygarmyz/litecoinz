@@ -728,7 +728,7 @@ fs::path GetDefaultParamsDir()
     // Unix-like: ~/.litecoinz-params
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "LitecoinzParams";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "ZcashParams";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -738,7 +738,7 @@ fs::path GetDefaultParamsDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // macOS
-    return pathRet / "Library/Application Support/LitecoinzParams";
+    return pathRet / "Library/Application Support/ZcashParams";
 #else
     // Unix-like
     return pathRet / ".litecoinz-params";
